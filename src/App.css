@@ -1,0 +1,78 @@
+body {
+  direction: rtl;
+  font-family: 'Varela Round', sans-serif;
+}
+
+/* Style the navbar */
+#navbar {
+  overflow: hidden;
+  z-index: 1000;
+  background-color:rgba(238, 238, 238, 0.8);
+}
+
+.header-content {
+  height: 200px;
+}
+
+.image-container {
+  height: 700px;
+  background:url('resources/theme.jpg');
+  background-repeat: no-repeat;
+  background-position:center;
+  background-attachment: fixed;
+  background-size: cover;
+}
+
+.app-header {
+
+}
+
+/* Navbar links */
+#navbar a {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  padding: 20px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  background-color: grey;
+  color: white;
+  cursor: pointer;
+}
+
+/* Page content */
+.content {
+  padding: 16px;
+  height: 2000px;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 100px;
+}
+
+.aside {
+  height: 500px;
+}
+
+.article {
+  margin-bottom: 20px;
+}
+
+.me-pic {
+  width: 60%;
+  float: left;
+}
+
+.me-text {
+  float: none;
+}

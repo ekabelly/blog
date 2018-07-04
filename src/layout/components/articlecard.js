@@ -11,7 +11,7 @@ class ArticleCard extends Component {
 				<img alt='pic' width='100%' src={pic} />
 				<h4 className='text-center'> {title} </h4>
 				<span className='desc-text'>{content.slice(0,50)+'...'}</span>
-				<a onClick={()=>this.props.showArticle(id)}> המשך לקרוא </a>
+				<a className='pointer' onClick={()=>this.props.showArticle(id)}> המשך לקרוא </a>
 			</article>);
 	}
 }

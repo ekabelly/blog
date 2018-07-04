@@ -12,3 +12,8 @@ export const fetchArticles = () => async dispatch => {
 		});
 	});
 }
+
+export const showArticle = id =>({
+	type:'SHOW_ARTICLE',
+	payload:id
+});

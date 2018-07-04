@@ -1,23 +1,44 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { changeY } from '../../services';
+const spinner = null;
 
 class Article extends Component {
+	handleArticle(){
+		changeY(740);
+		if (this.props.article) {
+			const { pic, content, title } = this.props.article;
+			return (<div>
+					<h2 className='text-right'> {title} </h2>
+				<article className='well me-article container-fluid desc-text'>
+					<div className='row'>
+						<div className=''>
+							{this.handlePic(pic)}
+			            	<p className='text-right me-text'>
+				            	{content}
+			            	</p>
+						</div>
+		            </div>
+	            </article>
+			</div>)
+		}
+		return spinner;
+	}
+
+	handlePic(pic){
+		if (pic) {
+			return <img className='me-pic' alt='אני' width='40%' src={pic} />;
+		}
+		return null;
+	}
+
 	render(){
-<<<<<<< HEAD
-		return (<article className='article col-md-4'>
-				<h4 className='text-center'> {this.props.title} </h4>
-				<img alt='pic' width='100%' src={this.props.pic} />
-				<div className=''>test</div>
-=======
-		const { pic, content, title} = this.props.article;
-		return (<article className='article col-md-4'>
-				<img alt='pic' width='100%' src={pic} />
-				<h4 className='text-center'> {title} </h4>
-				<span className='desc-text'>{content.slice(0,50)+'...'}</span>
-				<a> המשך לקרוא </a>
->>>>>>> be76a1ff3e7f75def722bd8aa0457aafcc92ec7d
-			</article>);
+		return this.handleArticle();
 	}
 }
 
-export default connect()(Article);
+const mapStateToProps = state =>({
+		article:state.articles.res[state.article.id]
+	});
+
+export default connect(mapStateToProps)(Article);

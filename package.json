@@ -7,10 +7,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "react-redux": "^5.0.7",
-<<<<<<< HEAD
-=======
     "react-router-dom": "^4.3.1",
->>>>>>> be76a1ff3e7f75def722bd8aa0457aafcc92ec7d
     "react-scripts": "1.1.4",
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",

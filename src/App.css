@@ -15,11 +15,7 @@ body {
 }
 
 .image-container {
-<<<<<<< HEAD
-  height: 700px;
-=======
   height: 800px;
->>>>>>> be76a1ff3e7f75def722bd8aa0457aafcc92ec7d
   background:url('resources/theme.jpg');
   background-repeat: no-repeat;
   background-position:center;
@@ -80,10 +76,8 @@ body {
 .me-text {
   float: none;
 }
-<<<<<<< HEAD
-=======
 
 .desc-text {
   word-wrap: break-word;
 }
->>>>>>> be76a1ff3e7f75def722bd8aa0457aafcc92ec7d
+

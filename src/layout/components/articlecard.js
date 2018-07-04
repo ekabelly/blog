@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import { changeY } from '../../services';
 import { showArticle } from '../../actions/articles.actions';
 
 class ArticleCard extends Component {
@@ -16,7 +17,10 @@ class ArticleCard extends Component {
 }
 
 const mapDispatchToProps = dispatch =>({
-        showArticle: id => dispatch(showArticle(id))
+        showArticle: id =>{
+        	changeY(740);
+        	return dispatch(showArticle(id));
+        } 
     });
 
 const mapStateToProps = state =>({});

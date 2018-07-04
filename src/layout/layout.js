@@ -7,6 +7,7 @@ import Admin from './admin';
 import ArticlesLayout from './articleslayout';
 import AdsContianer from './adscontainer';
 import { showArticle } from '../actions/articles.actions';
+import { clearContact, clearErr } from '../actions/index.actions';
 import { changeY } from '../services';
 import '../App.css';
 
@@ -33,11 +34,17 @@ class Layout extends Component {
 
   handleMe(){
     this.props.showArticle('me');
-    changeY(740);
+    this.resetStates();
   }
 
   handleArticles(){
     this.props.showArticle(false);
+    this.resetStates();
+  }
+
+  resetStates(){
+    this.props.clearErr();
+    this.props.clearContact();
     changeY(740);
   }
 
@@ -74,7 +81,7 @@ class Layout extends Component {
                     <div className='collapse navbar-collapse' id='navbar-collapse'>
                       <ul className="nav navbar-nav navbar-right">
                         <li>
-                          <Link to='/Contact' onClick={()=>changeY(740)}>צרו קשר </Link> 
+                          <Link to='/Contact' onClick={()=>this.resetStates()}>צרו קשר </Link> 
                         </li>
                         <li>
                           <Link to='/ArticlesLayout' onClick={()=>this.handleArticles()}>מאמרים</Link> 
@@ -127,6 +134,8 @@ const mapStateToProps = state =>({
 
 const mapDispatchToProps = dispatch =>({
         showArticle: id => dispatch(showArticle(id)),
+        clearContact: () => dispatch(clearContact()),
+        clearErr: () => dispatch(clearErr())
     });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Layout);

@@ -18,8 +18,12 @@ export const uploadFile = file => async dispatch =>{
 
 export const contact = contact => async dispatch => {
   contactRef.push().set({title:contact.title, email:contact.email, content:contact.content, name:contact.name});
-  dispatch({type:'CONTACT'});
+  dispatch({type:'CONTACT', payload:true});
 };
+
+export const clearContact = () =>({
+	type:'CONTACT', payload:false
+});
 
 export const fetchThemePic = () => async dispatch => {
 	themePicRef.on('value', snapshot=>{
@@ -29,3 +33,12 @@ export const fetchThemePic = () => async dispatch => {
 		});
 	});
 }
+
+export const err = field =>({
+	type:'ERR',
+	payload:field
+});
+
+export const clearErr = () =>({
+	type:'CLEAR_ERR'
+});

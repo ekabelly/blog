@@ -1,11 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { changeY } from '../../services';
 const spinner = null;
 
 class Article extends Component {
 	handleArticle(){
-		changeY(740);
 		if (this.props.article) {
 			const { pic, content, title } = this.props.article;
 			return (<div>

@@ -3,12 +3,14 @@ import ArticlesReducer from './articles.reducer';
 import ArticleReducer from './article.reducer';
 import FileReducer from './file.reducer';
 import ContactReducer from './contact.reducer';
-import themePicReducer from './themepic.reducer';
+import ThemePicReducer from './themepic.reducer';
+import ErrReducer from './err.reducer';
 
 export default combineReducers({
 	articles:ArticlesReducer,
 	article:ArticleReducer,
 	file:FileReducer,
 	contact:ContactReducer,
-	themePic:themePicReducer
+	themePic:ThemePicReducer,
+	err:ErrReducer
 });

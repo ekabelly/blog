@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import Article from './components/article';
+<<<<<<< HEAD
 // eslint-disable-next-line
 const articles = [
 			'https://www.incimages.com/uploaded_files/image/970x450/getty_855098134_353411.jpg', 
@@ -12,6 +13,12 @@ const articles = [
 class ArticlesLayout extends Component {
 	renderArticles(){
 		return this.props.articles.map((article, i)=><Article key={i} pic={article.pic} title={article.title} />);
+=======
+
+class ArticlesLayout extends Component {
+	renderArticles(){
+		return this.props.articles.map((article, i)=><Article key={i} article={article} />);
+>>>>>>> be76a1ff3e7f75def722bd8aa0457aafcc92ec7d
 	}
 
 	render(){

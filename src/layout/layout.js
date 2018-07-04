@@ -42,10 +42,18 @@ class Layout extends Component {
   }
 
   renderAds(){
-    if (window.location.pathname === '/admin') {
+    //if (window.location.pathname === '/admin') {
+    if (true) {
       return null;
     }
     return <AdsContianer />;
+  }
+
+  adsHandler(){
+    if (true) {
+      return 'col-md-12';
+    }
+    return 'col-md-9';
   }
 
   render() {
@@ -53,21 +61,29 @@ class Layout extends Component {
       <div className="App">
         <Router>
           <div>
-            <div className='image-container'>
+            <div className='image-container' style={{backgroundImage:`url(${this.props.themepic})`}}>
               <header className="app-header">
                 <nav className='navbar navbar-default' id="navbar">
-                  <div className='container'>
-                    <ul className="nav navbar-nav navbar-right">
-                      <li>
-                        <Link to='/Contact' onClick={()=>changeY(740)}>צרו קשר</Link> 
-                      </li>
-                      <li>
-                        <Link to='/ArticlesLayout' onClick={()=>this.handleArticles()}>מאמרים</Link> 
-                      </li>
-                      <li>
-                        <Link to='/Article' onClick={()=>this.handleMe()}>עליי</Link>
-                      </li>
-                    </ul>
+                  <div className='container-fluid'>
+                    <button type="button" className="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                      <span className="sr-only">Toggle navigation</span>
+                      <span className="icon-bar"></span>
+                      <span className="icon-bar"></span>
+                      <span className="icon-bar"></span>
+                    </button>
+                    <div className='collapse navbar-collapse' id='navbar-collapse'>
+                      <ul className="nav navbar-nav navbar-right">
+                        <li>
+                          <Link to='/Contact' onClick={()=>changeY(740)}>צרו קשר </Link> 
+                        </li>
+                        <li>
+                          <Link to='/ArticlesLayout' onClick={()=>this.handleArticles()}>מאמרים</Link> 
+                        </li>
+                        <li>
+                          <Link to='/Article' onClick={()=>this.handleMe()}>עליי</Link>
+                        </li>
+                      </ul>
+                    </div>
                   </div>
                 </nav>
               </header>
@@ -79,11 +95,11 @@ class Layout extends Component {
                     <div className='col-md-3 hidden-sm hidden-xs'>
                       {this.renderAds()}
                     </div>
-                    <div className='col-md-9'>
+                    <div className={this.adsHandler()}> 
                       <main>
                         <Switch>
                           <Route path='/Article' component={Article} />
-                          <Route path='/Admin' component={Admin} />
+                          <Route path='/admin' component={null} />
                           <Route path='/ArticlesLayout' component={ArticlesLayout} />
                           <Route path='/Contact' component={Contact} />
                           <Redirect from='/' to="/Article" />
@@ -105,7 +121,8 @@ class Layout extends Component {
 }
 
 const mapStateToProps = state =>({
-    article:state.article.id
+    article:state.article.id,
+    themepic:state.themePic.res
   });
 
 const mapDispatchToProps = dispatch =>({

@@ -9,9 +9,11 @@ import err from './middlewares/err';
 import reducers from './reducers/reducers';
 
 import { fetchArticles } from './actions/articles.actions';
+import { fetchThemePic } from './actions/index.actions';
 
 const store = createStore(reducers, applyMiddleware(promise(), thunk, createLogger(), err));
 
 store.dispatch(fetchArticles());
+store.dispatch(fetchThemePic());
 
 export default store;

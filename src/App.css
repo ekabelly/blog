@@ -16,7 +16,6 @@ body {
 
 .image-container {
   height: 800px;
-  background:url('resources/theme.jpg');
   background-repeat: no-repeat;
   background-position:center;
   background-attachment: fixed;

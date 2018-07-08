@@ -14,22 +14,22 @@ import { fetchThemePic, newVisit } from './actions/index.actions';
 
 const store = createStore(reducers, applyMiddleware(promise(), thunk, createLogger(), err));
 
- const displayVisits = () =>{    
-  // How many visits so far? 
-      var numVisits = GetCookie("numVisits"); 
-      if (numVisits) numVisits = parseInt(numVisits) + 1; 
-      else numVisits = 1; // the value for the new cookie 
+//  const displayVisits = () =>{    
+//   // How many visits so far? 
+//       var numVisits = GetCookie("numVisits"); 
+//       if (numVisits) numVisits = parseInt(numVisits) + 1; 
+//       else numVisits = 1; // the value for the new cookie 
   
-  // Show the number of visits 
-       store.dispatch(newVisit()); 
+//   // Show the number of visits 
+//        store.dispatch(newVisit()); 
   
-  // Set the cookie to expire 365 days from now 
-      var today = new Date(); 
-      today.setTime(today.getTime() + 1 /*days*/ * 24 /*hours*/ * 60 /*minutes*/ * 60 /*seconds*/ * 1000 /*milliseconds*/); 
-      SetCookie("numVisits", numVisits, today); 
-  }
+//   // Set the cookie to expire 365 days from now 
+//       var today = new Date(); 
+//       today.setTime(today.getTime() + 1 /*days*/ * 24 /*hours*/ * 60 /*minutes*/ * 60 /*seconds*/ * 1000 /*milliseconds*/); 
+//       SetCookie("numVisits", numVisits, today); 
+//   }
 
-displayVisits();
+// displayVisits();
 
 store.dispatch(fetchThemePic());
 store.dispatch(fetchArticles());

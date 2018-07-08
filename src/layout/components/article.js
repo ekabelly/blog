@@ -1,37 +1,30 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import Paragraph from './paragraph';
 const spinner = null;
 
 class Article extends Component {
 	handleArticle(){
 		if (this.props.article) {
-			const { pic, content, title } = this.props.article;
-			return (<div>
+			const { content, title } = this.props.article;
+			return (
+				<div>
 					<h2 className='text-right'> {title} </h2>
-				<article className='well me-article container-fluid desc-text'>
-					<div className='row'>
-						<div className=''>
-							{this.handlePic(pic)}
-			            	<p className='text-right me-text'>
-				            	{content}
-			            	</p>
-						</div>
-		            </div>
-	            </article>
-			</div>)
+					{content.paragraph.map((p, i)=>{
+						let pic = content.pics ? content.pics[i] : null;
+						return <Paragraph key={i} p={p} index={i} pic={pic} />
+					})}
+				</div>);
 		}
 		return spinner;
 	}
 
-	handlePic(pic){
-		if (pic) {
-			return <img className='me-pic' alt='אני' width='40%' src={pic} />;
-		}
-		return null;
-	}
-
 	render(){
-		return this.handleArticle();
+		return (<article className='well me-article container-fluid desc-text'>
+					<div className='row'> {this.handleArticle()}
+					</div>
+	            </article>);
+
 	}
 }
 

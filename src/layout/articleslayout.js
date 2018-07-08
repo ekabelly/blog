@@ -8,7 +8,7 @@ class ArticlesLayout extends Component {
 		const ids = Object.keys(this.props.articles);
 		const articles = Object.values(this.props.articles);
 
-		return articles.map((article, i)=><ArticleCard key={ids[i]} id={ids[i]} article={article} />);
+		return articles.map((article, i)=>ids[i] !== 'me' ? <ArticleCard key={ids[i]} id={ids[i]} article={article} /> : null);
 	}
 
 	render(){

@@ -1,3 +1,5 @@
+import React from 'react';
+import ReactStringReplace from 'react-string-replace';
 import store from './store';
 import { err } from './actions/index.actions';
 
@@ -25,3 +27,8 @@ export const validateInputs = content =>{
 }
 
 const handleEmailVlidation = email =>email.indexOf('@') !== -1;
+
+export const replaceUrl = text =>{
+	const regex = /(https?:\/\/\S+)/g;
+	return ReactStringReplace(text, regex, (match, i)=><a key={i} href={match}>{match}</a>);
+}

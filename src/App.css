@@ -68,8 +68,9 @@ h1, h2, h3, h4, strong, a {
 }
 
 .me-pic {
-  width: 60%;
+  max-width: 40%;
   float: left;
+  padding: 15px;
 }
 
 .me-text {
@@ -82,5 +83,9 @@ h1, h2, h3, h4, strong, a {
 
 .pointer {
   cursor: pointer;
+}
+
+.imgContainer {
+  padding:30px;
 }
 

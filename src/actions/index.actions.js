@@ -1,4 +1,4 @@
-import  { storage, contactRef, themePicRef } from '../config/firebase';
+import  { storage, contactRef, themePicRef, visitRef } from '../config/firebase';
 
 export const uploadFile = file => async dispatch =>{
 	const storageRef = storage.ref('/pics/'+file.name);
@@ -42,3 +42,7 @@ export const err = field =>({
 export const clearErr = () =>({
 	type:'CLEAR_ERR'
 });
+
+export const newVisit = () => async dispatch => {
+  visitRef.set(1);
+};

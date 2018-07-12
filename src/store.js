@@ -3,7 +3,7 @@ import { createStore, applyMiddleware } from 'redux';
 import { createLogger } from 'redux-logger';
 import thunk from 'redux-thunk';
 import promise from 'redux-promise-middleware';
-import { SetCookie, GetCookie } from './cookies';
+//import { SetCookie, GetCookie } from './cookies';
 
 import err from './middlewares/err';
 

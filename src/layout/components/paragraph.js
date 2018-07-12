@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
+import './paragraph.css';
 import { replaceUrl } from '../../services';
+import Modal from './modal';
 
 class Paragraph extends Component {
 	handleImgClass(){
@@ -9,19 +11,20 @@ class Paragraph extends Component {
 		return '';
 	}
 
-	handlePic(pic){
+	handlePic(pic, index){
 		if (pic) {
-			return <img className={'me-pic '+this.handleImgClass()} alt='אני' src={pic} />;
+			return <img  data-toggle="modal" data-target={"#picModal"+index} className={'me-pic '+this.handleImgClass()} alt='תמונה' src={pic} />;
 		}
 		return null;
 	}
 
 	render(){
-		const {p, pic} = this.props;
+		const {p, pic, index} = this.props;
 		return (<div className=''>
 					<div className=''>
-						{this.handlePic(pic)}
+						{this.handlePic(pic, index)}
 					</div>
+					<Modal pic={pic} index={index} />
 	            	<p className='text-right me-text'>
 		            	{replaceUrl(p)}
 	            	</p>

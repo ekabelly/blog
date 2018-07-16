@@ -21,7 +21,7 @@ h1, h2, h3, h4, strong, a {
 .image-container {
   height: 800px;
   background-repeat: no-repeat;
-  background-position:center;
+  background-position:75% center;
   background-attachment: fixed;
   background-size: cover;
 }
@@ -44,7 +44,7 @@ h1, h2, h3, h4, strong, a {
 /* Page content */
 .content {
   padding: 16px;
-  height: 2000px;
+  height: 800px;
 }
 
 /* The sticky class is added to the navbar with JS when it reaches its scroll position */

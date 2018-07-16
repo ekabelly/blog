@@ -13,7 +13,7 @@ class Paragraph extends Component {
 
 	handlePic(pic, index){
 		if (pic) {
-			return <img  data-toggle="modal" data-target={"#picModal"+index} className={'me-pic '+this.handleImgClass()} alt='תמונה' src={pic} />;
+			return <img  data-toggle="modal" data-target={"#picModal"+index} className={'me-pic pointer '+this.handleImgClass()} alt='תמונה' src={pic} />;
 		}
 		return null;
 	}

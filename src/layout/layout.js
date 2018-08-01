@@ -106,7 +106,7 @@ class Layout extends Component {
                       <main>
                         <Switch>
                           <Route path='/Article' component={Article} />
-                          <Route path='/admin' component={null} />
+                          <Route path='/admin' component={Admin} />
                           <Route path='/ArticlesLayout' component={ArticlesLayout} />
                           <Route path='/Contact' component={Contact} />
                           <Redirect from='/' to="/Article" />

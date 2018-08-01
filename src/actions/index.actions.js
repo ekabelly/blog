@@ -6,6 +6,9 @@ export const uploadFile = file => async dispatch =>{
 	task.on('state_changed',
 		function progress(snapshot){
 			let precentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+			if (precentage === 100) {
+				storageRef.getDownloadURL().then(url => console.log('url', url));
+			}
 			dispatch({type:'UPLOADING_FILE', payload:precentage});
 		},
 		function error(err){

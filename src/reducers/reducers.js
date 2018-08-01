@@ -5,6 +5,7 @@ import FileReducer from './file.reducer';
 import ContactReducer from './contact.reducer';
 import ThemePicReducer from './themepic.reducer';
 import ErrReducer from './err.reducer';
+import UserReducer from './user.reducer';
 
 export default combineReducers({
 	articles:ArticlesReducer,
@@ -12,5 +13,6 @@ export default combineReducers({
 	file:FileReducer,
 	contact:ContactReducer,
 	themePic:ThemePicReducer,
-	err:ErrReducer
+	err:ErrReducer,
+	user:UserReducer
 });

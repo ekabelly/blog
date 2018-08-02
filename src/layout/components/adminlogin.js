@@ -8,10 +8,25 @@ class AdminLogin extends Component {
 	}
 	render(){
 		return (<div>
-			login
-			<input type="text" id="email" />
-			<input type="password" id="pass" />
-			<button className="btn btn-default" onClick={()=>this.login()} > login </button>
+			<div className='container-fluid'>
+				<div className='center-block login-container well'>
+					<h4>התחברות: </h4>
+					<br/>
+					<div className='form-group'>
+						<label htmlFor='email'> אימייל:</label>
+					</div>
+					<div className='form-group'>
+							<input id='email' type='text' className='login-input' />
+					</div>
+					<div className='form-group'>
+						<label htmlFor='pass'> סיסמה:</label>
+					</div>
+					<div className='form-group'>
+						<input id='pass' type='password' className='login-input' />
+					</div>
+					<button className="btn btn-default" onClick={()=>this.login()} > התחבר/י </button>
+				</div>
+			</div>
 		</div>)
 	}
 }

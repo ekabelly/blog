@@ -1,6 +1,8 @@
 export const FirebaseConfig = {
-  apiKey: "AIzaSyCy7uk4BrErDEQynBSKNlGumqRiJ0y7cTE",
-  authDomain: "blog-reut.firebaseapp.com/",
-  databaseURL: "https://blog-reut.firebaseio.com/",
-  storageBucket:'gs://blog-reut.appspot.com'
-};
+	apiKey: "AIzaSyCghpa1XB3ugUxcvAii0aspeTxvCGcQcy8",
+	authDomain: "new-projecy-2b45c.firebaseapp.com",
+	databaseURL: "https://new-projecy-2b45c.firebaseio.com",
+	projectId: "new-projecy-2b45c",
+	storageBucket: "gs://blog-reut.appspot.com",
+	messagingSenderId: "972315227496"
+}

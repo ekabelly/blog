@@ -26,6 +26,7 @@ export const login = (email, password) => async dispatch => {
 	  // Handle Errors here.
 	  var errorCode = error.code;
 	  var errorMessage = error.message;
+	  console.log(error.message);
 	  // ...
 	});
 }

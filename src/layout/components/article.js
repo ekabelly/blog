@@ -11,8 +11,8 @@ class Article extends Component {
 				<div>
 					<h2 className='text-right'> {title} </h2>
 					{content.paragraph.map((p, i)=>{
-						let pic = content.pics ? content.pics[i] : null;
-						return <Paragraph key={i} p={p} index={i} pic={pic} />
+						//let pic = content.pics ? content.pics[i] : null;
+						return <Paragraph key={i} p={p.text} index={i} pics={p.pics} />
 					})}
 				</div>);
 		}
@@ -21,7 +21,8 @@ class Article extends Component {
 
 	render(){
 		return (<article className='well me-article container-fluid desc-text'>
-					<div className='row'> {this.handleArticle()}
+					<div className='row'> 
+						{this.handleArticle()}
 					</div>
 	            </article>);
 

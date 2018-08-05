@@ -21,7 +21,7 @@ const store = createStore(reducers, applyMiddleware(promise(), thunk, createLogg
 //       else numVisits = 1; // the value for the new cookie 
   
 //   // Show the number of visits 
-//        store.dispatch(newVisit()); 
+       store.dispatch(newVisit());
   
 //   // Set the cookie to expire 365 days from now 
 //       var today = new Date(); 

@@ -4,37 +4,33 @@ import { replaceUrl } from '../../services';
 import Modal from './modal';
 
 class Paragraph extends Component {
-	handleImgClass(){
-		const { index } = this.props;
-		if (index == 0) {
-			return 'cancel-float';
-		}
-		if (index % 2 !== 0) {
-			return 'pull-right';
+	handlePClass(){
+		if (this.props.ptype === 'title') {
+			return 'h3';
 		}
 		return '';
 	}
 
 	handlePics(){
 		const { pics } = this.props;
-		if (pics) {
+		if (pics && pics[0]) {
 			return pics.map((pic, i) => (<div key={'pic'+i}>
 				<div>
-					<img  data-toggle="modal" data-target={"#picModal"+i} className={'me-pic pointer '+this.handleImgClass()} alt='תמונה' src={pic} />
+					<img  data-toggle="modal" data-target={"#picModal"+i} className={'me-pic pointer '+pic.class} alt='תמונה' src={pic.src} />
 				</div>
-				<Modal pic={pic} index={i} />
+				<Modal pic={pic.src} index={i} />
 			</div>));
 		}
 		return null;
 	}
 
 	render(){
-		const {p, pics, index} = this.props;
+		const {p} = this.props;
 		return (<div className=''>
-					{this.handlePics()}
-	            	<p className='text-right me-text'>
+	            	<p className={'text-right me-text '+this.handlePClass()}>
 		            	{replaceUrl(p)}
 	            	</p>
+	            	{this.handlePics()}
 				</div>);
 	}
 }

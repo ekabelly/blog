@@ -3,7 +3,7 @@ body {
   font-family: 'Suez One', serif;
 }
 
-h1, h2, h3, h4, strong, a {
+h1, h2, h3, h4, strong, a, .h1, .h2, .h3, .h4 {
   font-family: 'Secular One', sans-serif !important;
 }
 
@@ -85,12 +85,44 @@ h1, h2, h3, h4, strong, a {
   cursor: pointer;
 }
 
+.cancel-float {
+  float: none;
+}
+
+.black-text {
+  color: black;
+}
+
+.cancel-padding {
+  padding: 0;
+}
+
+.tab-border {
+  border-radius:4px 4px 0 0;
+  border-bottom: 1px solid #ddd;
+  border-left: 1px solid #ddd;
+  border-right: 1px solid #ddd;
+  padding: 20px;
+}
+
 .imgContainer {
   padding:30px;
 }
 
 .login-container {
   width: 30%;
+}
+
+.max-w-100 {
+  max-width: 100%;
+}
+
+.space {
+  margin-top: 10px;
+}
+
+.space-right {
+  margin-right: 10px;
 }
 
 .login-input {
@@ -100,6 +132,11 @@ h1, h2, h3, h4, strong, a {
   border-top: none;
   border-bottom: 2px black solid;
   direction: ltr;
+}
+
+.force-input-inline {
+  display: inline !important;
+  width: auto !important;
 }
 
 @media only screen and (max-width: 900px) {

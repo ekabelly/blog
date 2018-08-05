@@ -3,6 +3,6 @@ export const FirebaseConfig = {
 	authDomain: "new-projecy-2b45c.firebaseapp.com",
 	databaseURL: "https://new-projecy-2b45c.firebaseio.com",
 	projectId: "new-projecy-2b45c",
-	storageBucket: "gs://blog-reut.appspot.com",
+	storageBucket: "gs://new-projecy-2b45c.appspot.com",
 	messagingSenderId: "972315227496"
 }

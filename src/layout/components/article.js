@@ -10,10 +10,7 @@ class Article extends Component {
 			return (
 				<div>
 					<h2 className='text-right'> {title} </h2>
-					{content.paragraph.map((p, i)=>{
-						//let pic = content.pics ? content.pics[i] : null;
-						return <Paragraph key={i} p={p.text} index={i} pics={p.pics} />
-					})}
+					{content.paragraph.map((p, i)=><Paragraph key={i} p={p.text} ptype={p.type} index={i} pics={p.pics} />)}
 				</div>);
 		}
 		return spinner;

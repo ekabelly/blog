@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import {BrowserRouter as Router, Route, Link, Redirect, Switch} from 'react-router-dom';
 import Article from './components/article';
 import Contact from './contact';
-import Admin from './admin';
+import AdminWrapper from './adminwrapper';
 import ArticlesLayout from './articleslayout';
 import AdsContianer from './adscontainer';
 import { showArticle } from '../actions/articles.actions';
@@ -106,7 +106,7 @@ class Layout extends Component {
                       <main>
                         <Switch>
                           <Route path='/Article' component={Article} />
-                          <Route path='/admin' component={Admin} />
+                          <Route path='/admin' component={AdminWrapper} />
                           <Route path='/ArticlesLayout' component={ArticlesLayout} />
                           <Route path='/Contact' component={Contact} />
                           <Redirect from='/' to="/Article" />

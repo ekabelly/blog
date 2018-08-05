@@ -1,13 +1,13 @@
-import  { storage, contactRef, themePicRef, visitRef } from '../config/firebase';
+import  { storage, contactRef, themePicRef, visitRef, databaseRef } from '../config/firebase';
 
-export const uploadFile = file => async dispatch =>{
-	const storageRef = storage.ref('/pics/'+file.name);
+export const uploadFile = (file, path) => async dispatch =>{
+	const storageRef = storage.ref('/pics/'+path+'/'+file.name);
 	let task = storageRef.put(file);
 	task.on('state_changed',
 		function progress(snapshot){
 			let precentage = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
 			if (precentage === 100) {
-				storageRef.getDownloadURL().then(url => console.log('url', url));
+				storageRef.getDownloadURL().then(url => themePicRef.set(url)); //the function here should be dispatch cb to a functoion that runs the db writing
 			}
 			dispatch({type:'UPLOADING_FILE', payload:precentage});
 		},
@@ -46,6 +46,5 @@ export const clearErr = () =>({
 	type:'CLEAR_ERR'
 });
 
-export const newVisit = () => async dispatch => {
-  visitRef.set(1);
-};
+export const newVisit = () => async dispatch => visitRef.once('value').then(snapshot =>
+	visitRef.update({'/count':snapshot.val().count+1}).catch(e=>console.error(e)));

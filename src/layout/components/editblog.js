@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import UploadFile from './uploadfile';
+import UploadThemePic from './uploadthemepic';
 
 class EditBlog extends Component {
 	render(){
@@ -8,7 +8,7 @@ class EditBlog extends Component {
 			<div className='row'>
 				<div className='form-group col-md-8 col-md-offset-2'>
 					<p className='h2'>       שינוי תמונת נושא       </p>
-					<UploadFile path='themePic' pic={""} />
+					<UploadThemePic path='themePic' pic={""} />
 				</div>
 			</div>
 		</div>);

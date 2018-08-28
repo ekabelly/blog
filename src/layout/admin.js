@@ -20,6 +20,7 @@ class Admin extends Component {
 	}
 
 	handleLocation(){
+		this.props.resetProgress();
 		const { location } = this.state;
 		if (location === 'EDIT_ARTICLES') {
 			return <EditArticlesWrapper />;
@@ -53,4 +54,11 @@ class Admin extends Component {
 	}
 }
 
-export default connect()(Admin);
+const mapDispatchToProps = dispatch =>({
+    resetProgress: ()=>dispatch({type:'RESET_PROGRESS'})
+});
+
+const mapStateToProps = state =>({
+  });
+
+export default connect(mapStateToProps, mapDispatchToProps)(Admin);

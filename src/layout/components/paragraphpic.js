@@ -13,7 +13,7 @@ class ParagraphPic extends Component {
 				<option>       נפרד מהטקסט   </option>
 			</select>
 			<div className='space'>
-				<UploadFile path={'articles/article name/contentparagraph/'+index+'/pics/'+i+'/src'} pic={""} />
+				<UploadFile path={'articles/article name/contentparagraph/'+index+'/pics/'+i+'/src'} pic={""} index={this.props.pindex+""+i} />
 			</div>
 		</div>);
 	}
